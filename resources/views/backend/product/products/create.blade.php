@@ -93,8 +93,7 @@
                             <label for="validationCustom0" class="col-xl-3 col-md-4"><span>*</span>
                                 Tags</label>
                             <div class="col-xl-8 col-md-7">
-                                <input class="form-control" id="validationCustom0" type="text"
-                                    required="">
+                                <input type="text" value=" " data-role="tagsinput">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -127,27 +126,26 @@
                 <div class="card-body">
 
                     <div class="digital-add needs-validation">
-
-                        <label class="col-form-label pt-0"> Gallery Images (600x600)</label>
-                        <form class="dropzone digits" id="singleFileUpload"
-                            action="http://themes.pixelstrap.com/upload.php">
-                            <div class="dz-message needsclick"><i class="fa fa-cloud-upload"></i>
-                                <h4 class="mb-0 f-w-600">Drop files here or click to upload.</h4>
-                            </div>
-                        </form>
                         <div class="form-group mt-5 row">
                             <label for="validationCustom0" class="col-xl-3 col-md-4">
                                 Thumbnail Image (300x300)</label>
                             <div class="col-xl-8 col-md-7">
-                                <div class="">
-                                    <input class="form-control" type="file" id="formFile">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                                        <i class="fa fa-picture-o"></i> Choose
+                                        </a>
+                                    </span>
+                                    <input id="thumbnail" class="form-control" type="text" name="banner">
                                 </div>
+                                <div id="holder" style="margin-top:15px;max-height:100px;"></div>
                             </div>
                         </div>
 
                     </div>
                 </div>
             </div>
+
             <div class="card">
                 <div class="card-header">
                     <h5>Product Videos</h5>
@@ -272,14 +270,14 @@
                     <h5>Product Description</h5>
                 </div>
                 <div class="card-body">
-
-                    <div class="digital-add needs-validation">
-                        <div class="form-group mb-0">
-                            <div class="description-sm">
-                                <textarea id="editor1" name="editor1" cols="10" rows="4"></textarea>
+                        <div class="row">
+                            <label class="col-form-label col-xl-3 col-md-4">Meta Description</label>
+                            <div class="col-xl-8 col-md-7">
+                                <div class="form-group">
+                                    <textarea  id="summary" name="summary"></textarea>
+                                </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
             <div class="card">
@@ -309,26 +307,41 @@
                 <div class="card-body">
 
                     <div class="digital-add needs-validation">
-                        <div class="form-group">
-                            <label for="validationCustom05" class="col-form-label pt-0"> Meta
-                                Title</label>
-                            <input class="form-control" id="validationCustom05" type="text" required="">
+                        <div class="row">
+                            <label for="validationCustom05" class="col-xl-3 col-md-4 col-form-label pt-0"> Meta Title</label>
+                            <div class="col-xl-8 col-md-7">
+                                <div class="form-group">
+                                    <input class="form-control" id="validationCustom05" type="text" required="">
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-form-label">Meta Description</label>
-                            <textarea rows="4" cols="12"></textarea>
+                        <div class="row">
+                            <label class="col-form-label col-xl-3 col-md-4">Meta Description</label>
+                            <div class="col-xl-8 col-md-7">
+                                <div class="form-group">
+                                    <textarea  id="description" name="description"></textarea>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="formFile" class="form-label">Meta Image</label>
-                            <input class="form-control" type="file" id="formFile">
+                        <div class="form-group mt-5 row">
+                            <label for="validationCustom0" class="col-xl-3 col-md-4">Meta Image</label>
+                            <div class="col-xl-8 col-md-7">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <a id="lf" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                                        <i class="fa fa-picture-o"></i> Choose
+                                        </a>
+                                    </span>
+                                    <input id="thumbnail" class="form-control" type="text" name="banner">
+                                </div>
+                                <div id="holder" style="margin-top:15px;max-height:100px;"></div>
+                            </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-
-
         </div>
+
         <div class="col-xl-4">
             <div class="card">
                 <div class="card-header">
@@ -603,3 +616,25 @@
 <!-- Container-fluid Ends-->
 
 @endsection
+
+@push('styles')
+<link rel="stylesheet" href="{{asset('backend/summernote/summernote.min.css')}}">
+@endpush
+
+@push('scripts')
+<script src="{{ asset('/vendor/laravel-filemanager/js/stand-alone-button.js') }}"></script>
+<script src="{{asset('backend/summernote/summernote.min.js')}}"></script>
+<script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+<script>
+    $('#lfm').filemanager('image');
+</script>
+<script>
+    $('#lf').filemanager('image');
+</script>
+<script>
+    CKEDITOR.replace( 'summary' );
+</script>
+<script>
+    CKEDITOR.replace( 'description' );
+</script>
+@endpush

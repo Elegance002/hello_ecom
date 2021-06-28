@@ -93,6 +93,36 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
     //Staff
     Route::resource('staffs', 'backend\admin\StaffController');
     Route::get('/staffs/destroy/{id}', 'backend\admin\StaffController@destroy')->name('staffs.destroy');
+
+    //Flash  Deals
+    Route::resource('flash_deals', 'backend\admin\FlashDealController');
+    // Route::get('/flash_deals/edit/{id}', 'backend\admin\FlashDealController@edit')->name('flash_deals.edit');
+    // Route::get('/flash_deals/destroy/{id}', 'backend\admin\FlashDealController@destroy')->name('flash_deals.destroy');
+    // Route::post('/flash_deals/update_status', 'backend\admin\FlashDealController@update_status')->name('flash_deals.update_status');
+    // Route::post('/flash_deals/update_featured', 'backend\admin\FlashDealController@update_featured')->name('flash_deals.update_featured');
+    // Route::post('/flash_deals/product_discount', 'backend\admin\FlashDealController@product_discount')->name('flash_deals.product_discount');
+    // Route::post('/flash_deals/product_discount_edit', 'backend\admin\FlashDealController@product_discount_edit')->name('flash_deals.product_discount_edit');
+
+    //Newletter
+    Route::get('/newsletter', 'backend\admin\NewsletterController@index')->name('newsletters.index');
+    // Route::post('/newsletter/send', 'backend\admin\NewsletterController@send')->name('newsletters.send');
+    // Route::post('/newsletter/test/smtp', 'backend\admin\NewsletterController@testEmail')->name('test.smtp');
+
+    //Messaging
+    Route::get('/sms', 'backend\admin\SmsController@index')->name('sms.index');
+    // Route::post('/sms-send', 'SmsController@send')->name('sms.send');
+
+    //Coupons
+    Route::resource('coupon', 'backend\admin\CouponController');
+    // Route::post('/coupon/get_form', 'backend\admin\CouponController@get_coupon_form')->name('coupon.get_coupon_form');
+    // Route::post('/coupon/get_form_edit', 'backend\admin\CouponController@get_coupon_form_edit')->name('coupon.get_coupon_form_edit');
+    // Route::get('/coupon/destroy/{id}', 'backend\admin\CouponController@destroy')->name('coupon.destroy');
+
+    //OTP-conf
+    Route::get('/otp-configuration', 'backend\admin\OTPController@configure_index')->name('otp.configconfiguration');
+    Route::get('/otp-credentials-configuration', 'backend\admin\OTPController@credentials_index')->name('otp_credentials.index');
+	// Route::post('/otp-configuration/update/activation', 'backend\admin\OTPController@updateActivationSettings')->name('otp_configurations.update.activation');
+	// Route::post('/otp-credentials-update', 'backend\admin\OTPController@update_credentials')->name('update_credentials');
     
     //Product
     Route::get('/products/admin', 'backend\admin\ProductController@admin_products')->name('products.admin');
@@ -119,6 +149,9 @@ Route::group(['middleware' => ['auth']], function() {
 
     //Reports
     Route::get('/commission-log', 'backend\admin\ReportController@commission_history')->name('commission-log.index');
+
+    //Subscriber
+    Route::resource('subscribers', 'backend\admin\SubscriberController');
 });
 
 //Vendor Dashboard

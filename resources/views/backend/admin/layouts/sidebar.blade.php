@@ -112,15 +112,15 @@
             <li><a class="sidebar-header" href="#"><i data-feather="mic"></i><span>Marketing</span><i
                         class="fa fa-angle-right pull-right"></i></a>
                 <ul class="sidebar-submenu">
-                    <li><a href="#"><i class="fa fa-circle"></i>Flash deals</a></li>
-                    <li><a href="#"><i class="fa fa-circle"></i>Newsletters </a></li>
-                    <li><a href="#"><i class="fa fa-circle"></i>Bulk SMS </a></li>
-                    <li><a href="#"><i class="fa fa-circle"></i>Subscribers </a></li>
+                    <li><a href="{{ route('flash_deals.index') }}"><i class="fa fa-circle"></i>Flash deals</a></li>
+                    <li><a href="{{ route('newsletters.index') }}"><i class="fa fa-circle"></i>Newsletters </a></li>
+                    <li><a href="{{ route('sms.index') }}"><i class="fa fa-circle"></i>Bulk SMS </a></li>
+                    <li><a href="{{ route('subscribers.index') }}"><i class="fa fa-circle"></i>Subscribers </a></li>
                     <li><a href="#"><i class="fa fa-circle"></i>Coupon <i
                                 class="fa fa-angle-right pull-right"></i> </a>
                         <ul class="sidebar-submenu">
-                            <li><a href="coupon-list.html"><i class="fa fa-circle"></i>List Coupons</a></li>
-                            <li><a href="coupon-create.html"><i class="fa fa-circle"></i>Create Coupons </a>
+                            <li><a href="{{ route('coupon.index') }}"><i class="fa fa-circle"></i>List Coupons</a></li>
+                            <li><a href="{{ route('coupon.create') }}"><i class="fa fa-circle"></i>Create Coupons </a>
                             </li>
                         </ul>
                     </li>
@@ -136,8 +136,8 @@
             <li><a class="sidebar-header" href="#"><i data-feather="phone"></i><span>OTP System</span><i
                         class="fa fa-angle-right pull-right"></i></a>
                 <ul class="sidebar-submenu">
-                    <li><a href="#"><i class="fa fa-circle"></i>OTP Configurations</a></li>
-                    <li><a href="#"><i class="fa fa-circle"></i>Set OTP Credentials</a></li>
+                    <li><a href="{{ route('otp.configconfiguration') }}"><i class="fa fa-circle"></i>OTP Configurations</a></li>
+                    <li><a href="{{ route('otp_credentials.index') }}"><i class="fa fa-circle"></i>Set OTP Credentials</a></li>
                 </ul>
             </li>
             <li><a class="sidebar-header" href="#"><i data-feather="layout"></i><span>Website Setup</span><i
