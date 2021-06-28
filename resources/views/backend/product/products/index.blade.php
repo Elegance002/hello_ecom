@@ -275,7 +275,7 @@
                             <div class="d-flex vendor-list">
                                 <img src="../assets/images/team/1.jpg" alt=""
                                     class="img-fluid img-40 rounded-circle blur-up lazyloaded">
-                                <span>Analog Black Dial Men's Watch-32-BK-CK</span>
+                                <span>Black Dial Men's Watch-32-BK-CK</span>
                             </div>
                         </td>
 
